@@ -1,0 +1,29 @@
+@use '../utils/functions' as f;
+
+.attribution {
+    font-size: f.rem(14); 
+    text-align: center; 
+    color: var(--txt-clr);
+}
+.attribution a { 
+    color: var(--link-clr); 
+    position: relative;
+    font-size: f.rem(17);
+
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: var(--txt-clr);
+        transition: width 300ms ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
